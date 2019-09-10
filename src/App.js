@@ -4,7 +4,7 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.componet';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import Header from './components/header/header.component';
-import { auth } from './firebase/firbase.utils'
+import { auth, createUserProfileDocument } from './firebase/firbase.utils'
 
 import './App.css';
 
@@ -21,10 +21,10 @@ class App extends React.Component {
   // whenever any changes occur firebase will send a message updating
   // give us the user and will call it
    componentDidMount(){
-     this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-       this.setState({currentUser: user})
+     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+       createUserProfileDocument(userAuth);
 
-       console.log(user)
+       console.log(userAuth)
      })
    }
 
