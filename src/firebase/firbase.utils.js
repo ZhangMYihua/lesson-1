@@ -29,12 +29,13 @@ const config = {
           displayName,
           email,
           createdAt,
-          ...additionalData  
+          ...additionalData
         })
       } catch (error) {
         console.log('Error creating User', error.message)
       }
     }
+    return userRef;
   }
 
   firebase.initializeApp(config);
