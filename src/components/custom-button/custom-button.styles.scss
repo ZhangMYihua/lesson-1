@@ -29,4 +29,16 @@
       border: none;
     }
   }
+// flip the colors of the normal button
+  &.inverted {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+  // if not keep it the same color
+  &:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid none;
+  }
 }
