@@ -7,8 +7,13 @@
   justify-content: center;
   border: 1px solid black;
   margin: 0 7.5px 15px;
+  // will keep the image inside its container 
   overflow: hidden;
 
+  // when u hover
+  // any ele with the class background-image should scale by 1.1 times the size of the image
+  // transition transform should take 6 seconds
+  // cubic-bezier determines speed in which transformation occurs
   &:hover{
     cursor: pointer;
 
@@ -30,8 +35,10 @@
     margin-left: 7.5px;
   }
   .background-image{
+    // makes sure image is always the size of the container
     width: 100%;
     height: 100%;
+    //
     background-position: center;
     background-size: cover;
   }
@@ -39,6 +46,7 @@
   .content {
     height: 90px;
     padding: 0 25px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,6 +54,7 @@
     border: 1px solid black;
     background-color: #fff;
     opacity: 0.9;
+    // position absolute of this content will always be whatever the position calc is defined
     position: absolute;
 
     .title {
