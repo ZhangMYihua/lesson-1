@@ -4,7 +4,7 @@ import './directory.styles.scss';
 
 function Directory(){
 
-    const [sections, setSections] = useState([
+    const [sections] = useState([
         {
           title: 'hats',
           imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
@@ -42,8 +42,8 @@ function Directory(){
     return (
         <div className='directory-menu'>
             {
-                sections.map(({title, imageUrl, id, size }) => (
-                    <MenuItem key={id} title={title} imageUrl={imageUrl} size={size}/>
+                sections.map(({ id, ...rest }) => (
+                    <MenuItem key={id} {...rest}/>
                 ))
             }
         </div>
