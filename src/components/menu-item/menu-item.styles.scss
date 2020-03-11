@@ -11,7 +11,7 @@
     &:hover {
       cursor: pointer;
 
-      & .background-image {
+      &.background-image {
         transform:scale(1.1);
         transition: transform 6s cubic-bezier (0.025, 0.45, 0.45, 0.95);
       }
